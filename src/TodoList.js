@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import store from "./store";
-import { changeInputAction, addItemAction, removeItemAction, getTodoList } from "./store/actionCreators";
+import { changeInputAction, addItemAction, removeItemAction, getMyListAction } from "./store/actionCreators";
 import TodoListUI from "./TodoListUI";
-import axios from "axios";
-
 
 class TodoList extends Component {
   constructor(props) {
@@ -18,7 +16,7 @@ class TodoList extends Component {
   }
 
   componentDidMount() {
-    const action = getTodoList()
+    const action = getMyListAction()
     store.dispatch(action)
   }
   removeItem(index) {
@@ -38,7 +36,7 @@ class TodoList extends Component {
   }
   render() {
     return (
-      <TodoListUI 
+      <TodoListUI
         inputValue={this.state.inputValue}
         list={this.state.list}
         changeInputValue={this.changeInputValue}

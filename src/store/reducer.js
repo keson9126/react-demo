@@ -1,11 +1,11 @@
-import { CHANGE_INPUT, ADD_ITEM, REMOVE_ITEM,GET_TODO_LIST } from "./actionTypes";
+import { CHANGE_INPUT, ADD_ITEM, REMOVE_ITEM, GET_TODO_LIST } from "./actionTypes";
 
 const defaultState = {
   inputValue: "",
   list: [],
 };
 
-export default (state = defaultState, action) => {
+const reducer = (state = defaultState, action) => {
   if (action.type === CHANGE_INPUT) {
     let newState = JSON.parse(JSON.stringify(state));
     newState.inputValue = action.value;
@@ -30,3 +30,5 @@ export default (state = defaultState, action) => {
 
   return state;
 };
+
+export default reducer;

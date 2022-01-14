@@ -11,6 +11,7 @@ const TodoListUI = (props) => {
           style={{ width: "260px", marginRight: "10px" }}
           onChange={props.changeInputValue}
           value={props.inputValue}
+          onPressEnter={props.clickBtn}
         />
         <Button type="primary" onClick={props.clickBtn}>
           Add
